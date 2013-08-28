@@ -1,0 +1,47 @@
+@columns: 3;
+@margin: 4; //Percentage
+@marginTotal: (@columns - 1) * @margin; //Total margin
+@columnWidth: (100-@marginTotal)/@columns;
+
+
+
+body,html, #container {
+}
+
+html, body, #container { height: 100%; background: #CCC;}
+body > #container { height: auto; min-height: 100%; }
+
+#form-container {
+clear:both;
+width:100%;
+
+}
+
+#header,#footer {
+  text-align:center;
+  background-color:#000;
+  color:#FFF;
+  height:50px;
+  overflow:hidden;
+  h1 { margin:0; }
+  clear:both;
+}
+
+#footer {
+  position:absolute;
+  width:100%;
+}
+
+#container {
+  max-width:600px;
+  margin:auto;
+}
+
+.column {
+  float:left;
+  width: ~"@{columnWidth}%";
+  margin-right: ~"@{margin}%";
+
+  }
+
+  .last { margin-right: 0}
